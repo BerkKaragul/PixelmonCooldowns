@@ -1,0 +1,4 @@
+name: PixelmonCooldowns
+version: '${project.version}'
+main: cloum.berk.pixelmoncooldowns.PixelmonCooldowns
+api-version: '1.16'
