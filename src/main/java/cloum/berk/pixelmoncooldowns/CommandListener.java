@@ -33,21 +33,23 @@ public class CommandListener implements Listener {
                 cooldownMap.put(data, System.currentTimeMillis());
             } else {
                 // on cooldown
+
                 event.setCancelled(true);
-                player.sendMessage(ChatColor.RED + PixelmonCooldowns.message);
+                player.sendMessage(ChatColor.RED + PixelmonCooldowns.message + " (" + (PixelmonCooldowns.cooldown - (System.currentTimeMillis() - cooldownMap.get(data))) / 1000 + "s)");
+
             }
         }
 
     }
 
-    @EventHandler(ignoreCancelled = true)
+/*    @EventHandler(ignoreCancelled = true)
     public void onPlayerQuit(PlayerQuitEvent event) {
         cooldownMap.forEach((data, timeout) -> {
             if (data.getUuid().equals(event.getPlayer().getUniqueId())) {
                 cooldownMap.remove(data);
             }
         });
-    }
+    }*/
 
     public static class Data {
 

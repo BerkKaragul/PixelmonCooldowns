@@ -15,7 +15,7 @@ public final class PixelmonCooldowns extends JavaPlugin {
 
     private void initConfig() {
         getConfig().addDefault("cooldown", 3000);
-        getConfig().addDefault("message", "Please wait a bit before using this command again!");
+        getConfig().addDefault("message", "Please wait before using this command again!");
         getConfig().options().copyDefaults(true);
         saveConfig();
         cooldown = getConfig().getLong("cooldown");
